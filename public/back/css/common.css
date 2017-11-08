@@ -1,5 +1,6 @@
 
-body{
+/*登录页*/
+.login-bgc{
     background: #222d32;
 }
 .panel{
@@ -7,4 +8,88 @@ body{
 }
 .panel h4{
     text-align: center;
+}
+
+/*首页的样式*/
+body,html{
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*左侧导航区*/
+.lt-aside{
+    background: #222d32;
+    height: 100%;
+    width: 180px;
+    position: absolute;
+}
+.lt-aside .topbar{
+    background: #367fa9;
+}
+.lt-aside .topbar h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+}
+.lt-aside .portrait{
+
+}
+.lt-aside .portrait img{
+    display: block;
+    width: 60px;
+    border-radius: 30px;
+    margin: 40px auto 0;
+}
+.lt-aside .portrait p{
+    color: #eee;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+.lt-aside .menu {
+
+}
+.lt-aside .menu li{
+    /*padding-left: 40px;*/
+}
+.lt-aside .menu li i{
+    display: inline-block;
+    margin-right: 4px;
+}
+.lt-aside .menu li a{
+    display: block;
+    color: #bbb;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
+}
+.lt-aside .menu li .submenu{
+    /*padding-left: 50px;*/
+    display: none;
+}
+.lt-aside .menu li .submenu a{
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 50px;
+    font-size: 12px;
+}
+.lt-aside .menu li a:link,
+.lt-aside .menu li a:visited,
+.lt-aside .menu li a:hover,
+.lt-aside .menu li a:active{
+    color: #bbb;
+    text-decoration: none;
+}
+
+/*右侧主题内容*/
+.lt-main{
+
 }
