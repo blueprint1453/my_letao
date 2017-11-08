@@ -42,10 +42,20 @@
   </div>
   <!--右侧内容区-->
   <div class="lt-main">
-     <div class="main-head">
-         <span class="glyphicon glyphicon-align-justify"></span>
-         <span class=""></span>
+      <!--头部-->
+     <div class="main-head clearfix">
+         <span class="glyphicon glyphicon-align-justify pull-left"></span>
+         <span class="glyphicon glyphicon-log-out pull-right"></span>
      </div>
+      <div class="main-content">
+          <!--面包屑导航-->
+          <ol class="breadcrumb">
+              <li><a href="#">管理系统</a></li>
+              <li><a href="#">首页</a></li>
+          </ol>
+
+      </div>
+
   </div>
 
 <!--引入js文件-->
@@ -53,6 +63,7 @@
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
+  <script src="lib/echarts/echarts.min.js"></script>
 <script src="js/common.js"></script>
 </body>
 </html>

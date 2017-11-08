@@ -18,6 +18,11 @@ body,html{
     margin: 0;
     padding: 0;
 }
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
 
 /*左侧导航区*/
 .lt-aside{
@@ -91,5 +96,27 @@ body,html{
 
 /*右侧主题内容*/
 .lt-main{
-
+    padding-left: 180px;
+    height: 100%;
+    /*background: lightblue;*/
+}
+.lt-main .main-head{
+    background: #3c8dbc;
+}
+.lt-main .main-head span{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #fff;
+}
+.lt-main .main-content .breadcrumb{
+    margin:10px 0;
+}
+.lt-main .main-content .breadcrumb a:hover{
+    text-decoration: none;
+    color: #8a6de9;
+}
+.lt-main .main-content .breadcrumb a.common{
+    color: #888;
 }
