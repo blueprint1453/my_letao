@@ -30,6 +30,11 @@ body,html{
     height: 100%;
     width: 180px;
     position: absolute;
+    left: 0;
+    transition: all 1s;
+}
+.lt-aside.toggle{
+    left: -180px;
 }
 .lt-aside .topbar{
     background: #367fa9;
@@ -73,18 +78,7 @@ body,html{
     font-size: 14px;
     height: 40px;
     line-height: 40px;
-    padding-left: 40px;
-}
-.lt-aside .menu li .submenu{
-    /*padding-left: 50px;*/
-    display: none;
-}
-.lt-aside .menu li .submenu a{
-    display: block;
-    height: 36px;
-    line-height: 36px;
-    padding-left: 50px;
-    font-size: 12px;
+    padding-left: 30px;
 }
 .lt-aside .menu li a:link,
 .lt-aside .menu li a:visited,
@@ -93,12 +87,39 @@ body,html{
     color: #bbb;
     text-decoration: none;
 }
+/*点击后页面跳转当前的一级目录所对应的样式*/
+.lt-aside .menu li>a.now{
+    border-top: 3px solid transparent;
+    border-left: 3px solid #367fa9;
+    border-bottom: 3px solid transparent;
+    background: #222;
+    color: #fff;
+}
 
+.lt-aside .menu li .submenu{
+    /*padding-left: 50px;*/
+     display: none;
+}
+.lt-aside .menu li .submenu a{
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 40px;
+    font-size: 12px;
+}
+/*点击后页面跳转当前的二级目录所对应的样式*/
+.lt-aside .menu li .submenu a.now{
+    color: #eee;
+}
 /*右侧主题内容*/
 .lt-main{
     padding-left: 180px;
     height: 100%;
+    transition:all 1s;
     /*background: lightblue;*/
+}
+.lt-main.toggle{
+    padding-left: 0;
 }
 .lt-main .main-head{
     background: #3c8dbc;
@@ -110,8 +131,11 @@ body,html{
     font-size: 16px;
     color: #fff;
 }
+.lt-main .main-content{
+    padding: 0 20px;
+}
 .lt-main .main-content .breadcrumb{
-    margin:10px 0;
+    margin:20px 0;
 }
 .lt-main .main-content .breadcrumb a:hover{
     text-decoration: none;
@@ -119,4 +143,43 @@ body,html{
 }
 .lt-main .main-content .breadcrumb a.common{
     color: #888;
+}
+
+.echart-box{
+
+}
+.echart-box .left-echart{
+    width: 45%;
+    height: 400px;
+    margin-right: 10%;
+}
+.echart-box .right-echart{
+    width: 45%;
+    height: 400px;
+}
+/*模态框的样式*/
+.modal .modal-body p>i{
+    margin-right: 3px;
+}
+
+/*用户页user.html页面的样式*/
+.lt-main .user-info{
+
+}
+.lt-main .user-info table{
+
+}
+.lt-main .user-info table th{
+    text-align: center;
+}
+
+/*商品管理页product.html页面的样式*/
+/*.lt-main .table-responsive{*/
+    /*margin-top: 16px;*/
+/*}*/
+.mt{
+    margin-top: 16px;
+}
+.lt-main .table-responsive th{
+    text-align: center;
 }

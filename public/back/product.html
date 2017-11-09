@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--引入css样式文件-->
+
+    <title>乐淘管理登录页</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<!--//左侧导航区-->
+<div class="lt-aside">
+    <div class="topbar">
+        <h3>ITCAST</h3>
+    </div>
+    <div class="portrait">
+        <img src="images/default.png" alt="">
+        <p>管理员</p>
+    </div>
+    <ul class="menu">
+        <li>
+            <a href="user.html" class=""><i class="glyphicon glyphicon-user"></i>用户管理</a>
+
+        </li>
+        <li>
+            <a href="javascript:;" class=""><i class="glyphicon glyphicon-list"></i>分类管理</a>
+            <div class="submenu">
+                <a href="first.html" class="">一级分类</a>
+                <a href="second.html" class="">二级分类</a>
+            </div>
+        </li>
+        <li>
+            <a href="product.html" class=""><i class="glyphicon glyphicon-tags"></i>商品管理</a>
+        </li>
+    </ul>
+</div>
+<!--右侧内容区-->
+<div class="lt-main">
+    <!--头部-->
+    <div class="main-head clearfix">
+        <a href="javascript:;" class="toggle-nav"><span class="glyphicon glyphicon-align-justify pull-left "></span></a>
+        <!-- Button trigger modal -->
+        <a href="javascript:;" class="loginout" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-out pull-right"></span></a>
+
+    </div>
+    <div class="main-content">
+        <!--面包屑导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li><a href="#">首页</a></li>
+        </ol>
+        <!--添加商品按钮  -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">添加商品</button>
+        </div>
+        <!--商品列表-->
+        <div class="table-responsive mt">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th class="text-center">序号</th>
+                        <th class="text-center">商品名称</th>
+                        <th class="text-center">商品描述</th>
+                        <th class="text-center">商品库存</th>
+                        <th class="text-center">商品尺寸</th>
+                        <th class="text-center">商品状态</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋</td>
+                        <td>描述123123</td>
+                        <td >44</td>
+                        <td >35-56</td>
+                        <td >已上架</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">下架</button>
+                            <button type="button" class="btn btn btn-primary">编辑</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--分页-->
+        <nav aria-label="Page navigation" class="pull-right">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<!--模态框-->
+<!-- Modal -->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-confirm">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--引入js文件-->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="js/common.js"></script>
+</body>
+</html>

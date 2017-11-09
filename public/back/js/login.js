@@ -68,7 +68,6 @@ $(function () {
                 if(data.error==1001){
                     console.log(123);
                     $form.data("bootstrapValidator").updateStatus('password','INVALID',"callback");
-
                 }
             }
         })

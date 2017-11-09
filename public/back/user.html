@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--引入css样式文件-->
+
+    <title>乐淘管理登录页</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<!--//左侧导航区-->
+<div class="lt-aside">
+    <div class="topbar">
+        <h3>ITCAST</h3>
+    </div>
+    <div class="portrait">
+        <img src="images/default.png" alt="">
+        <p>管理员</p>
+    </div>
+    <ul class="menu">
+        <li>
+            <a href="user.html" class=""><i class="glyphicon glyphicon-user"></i>用户管理</a>
+
+        </li>
+        <li>
+            <a href="javascript:;" class=""><i class="glyphicon glyphicon-list"></i>分类管理</a>
+            <div class="submenu">
+                <a href="first.html" class="">一级分类</a>
+                <a href="second.html" class="">二级分类</a>
+            </div>
+        </li>
+        <li>
+            <a href="product.html" class=""><i class="glyphicon glyphicon-tags"></i>商品管理</a>
+        </li>
+    </ul>
+</div>
+<!--右侧内容区-->
+<div class="lt-main">
+    <!--头部-->
+    <div class="main-head clearfix">
+        <a href="javascript:;" class="toggle-nav"><span class="glyphicon glyphicon-align-justify pull-left "></span></a>
+        <!-- Button trigger modal -->
+        <a href="javascript:;" class="loginout" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-out pull-right"></span></a>
+
+    </div>
+    <div class="main-content">
+        <!--面包屑导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">管理系统</a></li>
+            <li><a href="#">首页</a></li>
+        </ol>
+       <!--用户列表-->
+        <div class="user-info">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th class="text-center">序号</th>
+                        <th class="text-center">用户名</th>
+                        <th class="text-center">手机号</th>
+                        <th class="text-center">状态</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <!--<tr>-->
+                       <!--<td>1</td>-->
+                       <!--<td>itcast</td>-->
+                       <!--<td>15102324243</td>-->
+                       <!--<td >正常</td>-->
+                       <!--<td><button type="button" class="btn btn-danger">禁用</button></td>-->
+                   <!--</tr>-->
+                </tbody>
+            </table>
+        </div>
+        <!--分页-->
+        <nav aria-label="Page navigation" class="pull-right">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!--模态框-->
+<!-- Modal -->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要禁用itcast这个用户吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-confirm">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--模态框-->
+<!-- Modal -->
+<div class="modal fade bs-example-modal-sm" id="user-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="user-ModalLabel">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn-confirm">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--引入js文件-->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template.js"></script>
+<script src="js/common.js"></script>
+<script src="js/user.js"></script>
+
+<!--用户列表的模板引擎-->
+<script type="text/html" id="user-temp">
+
+    {{each rows as value index}}
+    <tr>
+        <td id="{{value.id}}">{{index+1}}</td>
+        <td>{{value.username}}</td>
+        <td>{{value.mobile}}</td>
+        {{if value.isDelete ==0}}
+        <td >已禁用</td>
+        <td><button type="button" class="btn btn-primary btn-update" isDelete="1" >启用</button></td>
+        {{else}}
+        <td >正常</td>
+        <td><button type="button" class="btn btn-danger btn-update" isDelete="0" data-toggle="modal" data-target="#user-Modal">禁用</button></td>
+        {{/if}}
+    </tr>
+    {{/each}}
+</script>
+
+</body>
+</html>
