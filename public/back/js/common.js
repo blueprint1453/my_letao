@@ -3,6 +3,7 @@
  */
 $(function () {
 
+
     //页面一加载就发送一个ajax请求 判断用户是否登录 如果没有登录,那就打回登录页
     //登录页就不需发送了
     if(window.location.href.indexOf("login.html")==-1){

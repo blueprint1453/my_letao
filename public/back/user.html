@@ -20,6 +20,7 @@
         <img src="images/default.png" alt="">
         <p>管理员</p>
     </div>
+
     <ul class="menu">
         <li>
             <a href="user.html" class=""><i class="glyphicon glyphicon-user"></i>用户管理</a>
@@ -104,7 +105,7 @@
                 <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
             </div>
             <div class="modal-body">
-                <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要禁用itcast这个用户吗？</p>
+                <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
@@ -114,21 +115,21 @@
     </div>
 </div>
 
-<!--模态框-->
+<!--启用或禁用的模态框-->
 <!-- Modal -->
-<div class="modal fade bs-example-modal-sm" id="user-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade bs-example-modal-sm" id="user-Modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="user-ModalLabel">温馨提示</h4>
             </div>
             <div class="modal-body">
-                <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗</p>
+                <p class="text-danger"><i class="glyphicon glyphicon-info-sign"></i>您确定要<span class="add-words"></span>itcast这个用户吗？</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary btn-confirm">确定</button>
+                <button type="button" class="btn btn-primary btn-confirm-user">确定</button>
             </div>
         </div>
     </div>
@@ -152,10 +153,10 @@
         <td>{{value.mobile}}</td>
         {{if value.isDelete ==0}}
         <td >已禁用</td>
-        <td><button type="button" class="btn btn-primary btn-update" isDelete="1" >启用</button></td>
+        <td><button type="button" class="btn btn-primary btn-status" isDelete="0">启用</button></td>
         {{else}}
         <td >正常</td>
-        <td><button type="button" class="btn btn-danger btn-update" isDelete="0" data-toggle="modal" data-target="#user-Modal">禁用</button></td>
+        <td><button type="button" class="btn btn-danger btn-status" isDelete="1">禁用</button></td>
         {{/if}}
     </tr>
     {{/each}}
