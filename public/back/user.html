@@ -131,17 +131,17 @@
 
     {{each rows as value index}}
     <tr>
-        <td>{{index+1}}</td>
+        <td>{{size*(page-1)+index+1}}</td>
         <td>{{value.username}}</td>
         <td>{{value.mobile}}</td>
         {{if value.isDelete==1}}
         <td>正常</td>
-        <td>
+        <td data-id="{{value.id}}">
             <button type="button" class="btn btn-danger btn-status changeStatus btn-group-sm">禁用</button>
         </td>
         {{else}}
          <td>禁用</td>
-         <td  id="{{value.id}}">
+         <td  data-id="{{value.id}}">
              <button type="button" class="btn btn-success changeStatus btn-group-sm">启用</button>
          </td>
         {{/if}}

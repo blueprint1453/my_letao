@@ -39,13 +39,14 @@ $(function () {
 
     // 更新用户状态 点击 禁用/启用 按钮
     $('.user-info tbody').on('click','.changeStatus',function(){
-        var id = $(this).parent().attr('id');
+        var id = $(this).parent().data('id');
+        console.log(id);
         var isDelete;
         if($(this).hasClass('btn-danger')){
              isDelete = 0;
         }
         if($(this).hasClass('btn-success')){
-            isDelete = 1;
+             isDelete = 1;
         }
 
         // 调用模态框提供的js方法 显示模态框

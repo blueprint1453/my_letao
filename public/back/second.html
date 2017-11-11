@@ -54,49 +54,26 @@
         </ol>
         <!--添加商品按钮  -->
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">添加分类</button>
+            <button type="button" class="btn btn-default btn-add">添加分类</button>
         </div>
         <!--商品列表-->
         <table class="table table-bordered text-center mt">
             <thead>
             <tr>
-                <th class="text-center">序号</th>
-                <th class="text-center">一级分类名称</th>
-                <th class="text-center">二级分类名称</th>
-                <th class="text-center">二级分类LOGO</th>
+                <th  width="10%" class="text-center">序号</th>
+                <th  width="30%" class="text-center">一级分类名称</th>
+                <th  width="30%" class="text-center">二级分类名称</th>
+                <th  width="30%" class="text-center">二级分类LOGO</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>运动馆</td>
-                <td>阿萨德</td>
-                <td>logo</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>运动馆</td>
-                <td>阿萨德</td>
-                <td>logo</td>
-            </tr>
+             <!--挖坑-->
             </tbody>
         </table>
         <!--分页-->
-        <nav aria-label="Page navigation" class="pull-right">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="page-box text-right">
+            <ul id="paginator"></ul>
+        </div>
     </div>
     <!--模态框-->
     <!-- Modal -->
@@ -117,12 +94,87 @@
             </div>
         </div>
     </div>
+    <!--添加分类的模态框-->
+    <div class="modal fade bs-example-modal-sm" id="add-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="add-ModalLabel">添加分类</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" id = "form" method="post" enctype="multipart/form-data">
+                        <!--隐藏的输入域 用于发送一级分类的id-->
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="categoryId" id="categoryId">
+                        </div>
+                        <!-- 下拉菜单 -->
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle btn-list" data-toggle="dropdown" >
+                                    <span class="select-text">请选择</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <!--挖坑-->
+                                </ul>
+                            </div>
+                        </div>
+                        <!--二级分类名称-->
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="brandName" name="brandName" placeholder="请输入二级分类名称">
+                        </div>
+                        <div class="pic-box">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default pic-add">上传图片</button>
+                            <!--上传图片的标签 正常情况下隐藏-->
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="pic1" id="brandLogo" data-url="/category/addSecondCategoryPic">
+                            </div>
+                                <div class="form-group">
+                                    <input type="hidden" class="btn btn-default" name="brandLogo" id="brand">
+                                </div>
+                            <div class="form-group">
+                                <img src="images/none.png" alt="">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
+                    <button type="submit" form="form" class="btn btn-primary btn-addCategory">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--引入js文件-->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/artTemplate/template.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+    <script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/second.js"></script>
+    <!--//二级分类列表的模板引擎-->
+    <script type="text/html" id="second-temp">
+       {{each rows as value i}}
+        <tr>
+            <td>{{(page-1)*size+i+1}}</td>
+            <td>{{value.categoryName}}</td>
+            <td>{{value.brandName}}</td>
+            <td><img src="{{value.brandLogo?value.brandLogo:'images/none.png'}}" alt=""></td>
+        </tr>
+        {{/each}}
+    </script>
 
-</body>
+    <!--//添加分类列表的下拉框的模板引擎-->
+    <script type="text/html" id="list-temp">
+        {{each rows as value i}}
+        <li><a href="javascript:;" data-id="{{value.id}}">{{value.categoryName}}</a></li>
+        {{/each}}
+    </script>
 </html>

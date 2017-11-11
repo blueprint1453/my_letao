@@ -183,3 +183,26 @@ body,html{
 .lt-main .table-responsive th{
     text-align: center;
 }
+/*一级分类页面样式*/
+
+/*二级分类页面样式*/
+.pic-box{
+  position: relative;
+}
+.pic-box .pic-add{
+    z-index: 1;
+}
+.pic-box #brandLogo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0;
+}
+.pic-box img{
+    width: 100px;
+}
+tbody img{
+    width: 120px;
+    height: 60px;
+}
