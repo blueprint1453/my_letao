@@ -108,6 +108,9 @@ body,html{
     font-size: 12px;
 }
 /*点击后页面跳转当前的二级目录所对应的样式*/
+.lt-aside .menu li .submenu.now{
+    display: block;
+}
 .lt-aside .menu li .submenu a.now{
     color: #eee;
 }
@@ -205,4 +208,11 @@ body,html{
 tbody img{
     width: 120px;
     height: 60px;
+}
+/*商品管理*/
+.img-list{
+
+}
+.img-list img{
+    width: 100px;
 }

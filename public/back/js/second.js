@@ -150,30 +150,6 @@ $(function () {
         })
 
     })
-    //6.1表单校验成功
-    //$(".btn-addCategory").on('click', function (e) {
-    //    console.log(555);
-    //    e.preventDefault();
-    //    $.ajax({
-    //        url:"/category/addSecondCategory",
-    //        type:"post",
-    //        data:$('#form').serialize(),
-    //        success: function (data) {
-    //            console.log(9999);
-    //            if(data.success){
-    //                //模态框隐藏 重新加载第一页
-    //                $("#add-Modal").modal('hide');
-    //                currentPage = 1;
-    //                loadData();
-                    //重置表单样式 清空内容
-                    //$("#form").data('bootstrapValidator').resetForm();
-                    //$("#form")[0].reset();
-                    //$(".select-text").text("请选择");
-                    //$(".pic-box img").attr('src','images/none.png');
-    //            }
-    //        }
-    //    })
-    //
-    //})
+
 
 })

@@ -2,16 +2,13 @@
  * Created by blueprint on 2017/11/9.
  */
 $(function () {
-    //³õÊ¼»¯Ò³ÊýºÍÌõÊý
+    //ï¿½ï¿½Ê¼ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     var currentPage = 1;
     var pageSize = 5;
     loadData();
-    //ÈÃµ±Ç°µÄÄ¿Â¼¸ßÁÁ
-    if(window.location.href.indexOf('user.html')!=-1){
-        console.log(666);
-        $('.menu a:eq(0)').addClass('now');
-    }
-    //äÖÈ¾Ò³ÃæµÄº¯Êý
+    //ï¿½Ãµï¿½Ç°ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½
+
+    //ï¿½ï¿½È¾Ò³ï¿½ï¿½Äºï¿½ï¿½ï¿½
     function loadData(){
         $.ajax({
             url:"/user/queryUser",
@@ -23,7 +20,7 @@ $(function () {
             success: function (data) {
                 console.log(data);
                 $('.user-info tbody').html(template('user-temp',data));
-                //äÖÈ¾·ÖÒ³µÄ¹¦ÄÜ
+                //ï¿½ï¿½È¾ï¿½ï¿½Ò³ï¿½Ä¹ï¿½ï¿½ï¿½
                 $("#paginator").bootstrapPaginator({
                     bootstrapMajorVersion:3,
                     currentPage:currentPage,
@@ -37,7 +34,7 @@ $(function () {
         });
     }
 
-    // ¸üÐÂÓÃ»§×´Ì¬ µã»÷ ½ûÓÃ/ÆôÓÃ °´Å¥
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½×´Ì¬ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¥
     $('.user-info tbody').on('click','.changeStatus',function(){
         var id = $(this).parent().data('id');
         console.log(id);
@@ -49,9 +46,9 @@ $(function () {
              isDelete = 1;
         }
 
-        // µ÷ÓÃÄ£Ì¬¿òÌá¹©µÄjs·½·¨ ÏÔÊ¾Ä£Ì¬¿ò
+        // ï¿½ï¿½ï¿½ï¿½Ä£Ì¬ï¿½ï¿½ï¿½á¹©ï¿½ï¿½jsï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ê¾Ä£Ì¬ï¿½ï¿½
         $('#user-Modal').modal('show');
-        //¸øÄ£Ì¬¿òµÄÈ·¶¨°´Å¥Ìí¼Óµã»÷ÊÂ¼þ
+        //ï¿½ï¿½Ä£Ì¬ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Å¥ï¿½ï¿½Óµï¿½ï¿½ï¿½Â¼ï¿½
         $('.btn-confirm-user').on('click', function () {
             $.ajax({
                 url:"/user/updateUser",
@@ -62,7 +59,7 @@ $(function () {
                 },
                 success: function (data) {
                     console.log(data);
-                    // µ÷ÓÃÄ£Ì¬¿òÌá¹©µÄjs·½·¨ Òþ²ØÄ£Ì¬¿ò
+                    // ï¿½ï¿½ï¿½ï¿½Ä£Ì¬ï¿½ï¿½ï¿½á¹©ï¿½ï¿½jsï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä£Ì¬ï¿½ï¿½
                     if(data.success){
                         $('#user-Modal').modal('hide');
                         loadData();

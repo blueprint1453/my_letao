@@ -33,7 +33,7 @@
             </div>
         </li>
         <li>
-            <a href="product.html" class=""><i class="glyphicon glyphicon-tags"></i>商品管理</a>
+            <a href="product.html" class="now"><i class="glyphicon glyphicon-tags"></i>商品管理</a>
         </li>
     </ul>
 </div>
@@ -54,7 +54,7 @@
         </ol>
         <!--添加商品按钮  -->
         <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">添加商品</button>
+            <button type="button" class="btn btn-default btn-add">添加分类</button>
         </div>
         <!--商品列表-->
         <div class="table-responsive mt">
@@ -101,6 +101,72 @@
         </div>
     </div>
 </div>
+    <!--添加商品的模态框-->
+    <div class="modal fade bs-example-modal-sm" id="add-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="add-ModalLabel">编辑商品</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" id = "form" method="post" enctype="multipart/form-data">
+                        <!--隐藏的输入域 用于发送一级分类的id-->
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="brandId" id="brandId">
+                        </div>
+                        <!-- 下拉菜单 -->
+                        <div class="form-group form-group-lg">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle btn-list" data-toggle="dropdown" >
+                                    <span class="select-text">请选择二级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <!--挖坑-->
+                                </ul>
+                            </div>
+                        </div>
+                        <!--二级分类名称-->
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="proName" name="proName" placeholder="请输入商品名称">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="proDesc" id=""  rows="2" placeholder="请输入商品描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="num" name="num" placeholder="请输入商品库存">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="price" name="price" placeholder="请输入商品价格">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="oldPrice" name="oldPrice" placeholder="请输入商品原价">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="size" name="size" placeholder="请输入商品尺码">
+                        </div>
+
+                            <div class="form-group pic-box">
+                                <button type="button" class="btn btn-default pic-add">上传图片</button>
+                                <span>提示:必须上传三张图片</span>
+                                <!--上传图片的标签 正常情况下隐藏-->
+                                <input type="file" class="form-control" name="pic1" id="brandLogo" data-url="/product/addProductPic" multiple>
+                            </div>
+                            <div class="form-group img-list">
+                                <!--<img src="images/none.png" alt="">-->
+                                <!--隐藏的输入域 用于校验图片数量是否正好为三张-->
+                                <input type="hidden" class="btn btn-default" name="productLogo" id="productLogo">
+                            </div>
+
+                    </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal">取消</button>
+                    <button type="submit" form="form" class="btn btn-primary btn-addCategory">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--引入js文件-->
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
@@ -130,6 +196,12 @@
                 {{/if}}
             </td>
         </tr>
+        {{/each}}
+    </script>
+    <!--//添加分类列表的下拉框的模板引擎-->
+    <script type="text/html" id="list-temp">
+        {{each rows as value i}}
+        <li><a href="javascript:;" data-id="{{value.id}}">{{value.brandName}}</a></li>
         {{/each}}
     </script>
 </body>
